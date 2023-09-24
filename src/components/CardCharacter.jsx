@@ -55,7 +55,7 @@ const CardCharacter = ({character}) => {
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                     >
-                        <Typography variant="body2" color="text.secondary">Information</Typography>
+                        <Typography variant="body1" color="text.primary">Information</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography variant="body2" color="text.secondary">
