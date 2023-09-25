@@ -1,4 +1,4 @@
-import CardCharacter from "../components/CardCharacter.jsx";
+import PersonalizedCard from "../components/PersonalizedCard.jsx";
 import {useEffect, useState} from "react";
 import instance from "../config/axios.js";
 import {Grid} from "@mui/material";
@@ -3605,7 +3605,7 @@ const Characters = () => {
     const renderCharacter = () =>{
         return characters.map((character, index) =>
             <Grid item xs={2} sm={4} md={4} key={index}>
-                <CardCharacter key={character.id} character={character}></CardCharacter>
+                <PersonalizedCard key={character.id} dataObject={character}></PersonalizedCard>
             </Grid>
         )
     }

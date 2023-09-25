@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     Accordion,
     AccordionDetails,
@@ -14,16 +13,21 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import PropTypes from "prop-types";
 
-const CardCharacter = ({character}) => {
+const PersonalizedCard = ({dataObject}) => {
 
-    const name = character.attributes.name
-    const id = character.id
+    const name = dataObject.attributes.name
+    const id = dataObject.id
 
-    const setImg = (img) => {
-        if(img !== null){
+    const setImg = (img, type) => {
+        if (img !== null && img !== undefined) {
             return img
-        }else{
-            return "/images/cards/img.png"
+        } else if(type==="character"){
+            return "/images/cards/character.png"
+        } else  if(type==="movie"){
+            console.log("entra")
+            return "/images/cards/movie.png"
+        }else  if(type==="potion"){
+            return "/images/cards/potion.png"
         }
     }
 
@@ -42,11 +46,12 @@ const CardCharacter = ({character}) => {
                 <CardMedia
                     component="img"
                     height="194"
-                    image={setImg(character.attributes.image)}
+                    image={setImg(dataObject.attributes.image, dataObject.type)}
                 />
+
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
-                        <b>type: </b>{character.type}<br/>
+                        <b>type: </b>{dataObject.type}<br/>
                     </Typography>
                 </CardContent>
                 <Accordion>
@@ -58,33 +63,19 @@ const CardCharacter = ({character}) => {
                         <Typography variant="body1" color="text.primary">Information</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography variant="body2" color="text.secondary">
-                            <b>slug: </b> {character.attributes.slug}<br/>
-                            <b>name: </b> {character.attributes.name}<br/>
-                            <b>born: </b> {character.attributes.born}<br/>
-                            <b>died: </b> {character.attributes.died}<br/>
-                            <b>gender: </b>{character.attributes.gender}<br/>
-                            <b>species: </b> {character.attributes.species}<br/>
-                            <b>height: </b> {character.attributes.height}<br/>
-                            <b>weight: </b> {character.attributes.weight}<br/>
-                            <b>hair_color: </b> {character.attributes.hair_color}<br/>
-                            <b>eye_color: </b> {character.attributes.eye_color}<br/>
-                            <b>skin_color: </b> {character.attributes.skin_color}<br/>
-                            <b>blood_status: </b> {character.attributes.blood_status}<br/>
-                            <b>marital_status: </b> {character.attributes.marital_status}<br/>
-                            <b>nationality: </b> {character.attributes.nationality}<br/>
-                            <b>animagus: </b> {character.attributes.animagus}<br/>
-                            <b>boggart: </b> {character.attributes.boggart}<br/>
-                            <b>house: </b> {character.attributes.house}<br/>
-                            <b>patronus: </b> {character.attributes.patronus}<br/>
-                            <b>alias_names: </b> {character.attributes.alias_names}<br/>
-                            <b>family_members: </b> {character.attributes.family_members}<br/>
-                            <b>jobs: </b> {character.attributes.jobs}<br/>
-                            <b>romances: </b> {character.attributes.romances}<br/>
-                            <b>titles: </b> {character.attributes.titles}<br/>
-                            <b>wands: </b> {character.attributes.wands}<br/>
-                            <b>image: </b> {character.attributes.image}<br/>
-                            <b>wiki: </b> {character.attributes.wiki}<br/>
+                        <Typography component={'span'} variant="body2" color="text.secondary">
+                            {
+                                Object.keys(dataObject.attributes).map(key => {
+                                    const value = dataObject.attributes[key]
+                                    if (value !== null) {
+                                        return (
+                                            <div key={key}>
+                                                <b>{key}: </b>{value}
+                                            </div>)
+                                    }
+                                    return null
+                                })
+                            }
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
@@ -93,8 +84,8 @@ const CardCharacter = ({character}) => {
     );
 };
 
-CardCharacter.propTypes = {
-    character: PropTypes.shape({
+PersonalizedCard.propTypes = {
+    dataObject: PropTypes.shape({
         id: PropTypes.string.isRequired,
         type: PropTypes.string.isRequired,
         attributes: PropTypes.shape({
@@ -115,7 +106,7 @@ CardCharacter.propTypes = {
             animagus: PropTypes.string,
             boggart: PropTypes.string,
             house: PropTypes.string,
-            patronus: PropTypes.arrayOf(PropTypes.string),
+            patronus: PropTypes.string,
             alias_names: PropTypes.arrayOf(PropTypes.string),
             family_members: PropTypes.arrayOf(PropTypes.string),
             jobs: PropTypes.arrayOf(PropTypes.string),
@@ -128,4 +119,4 @@ CardCharacter.propTypes = {
     }).isRequired
 }
 
-export default CardCharacter;
+export default PersonalizedCard;
