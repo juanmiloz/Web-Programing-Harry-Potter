@@ -2,32 +2,67 @@ import {
     Accordion,
     AccordionDetails,
     AccordionSummary,
+    Button,
     Card,
     CardContent,
     CardHeader,
     CardMedia,
-    IconButton,
+    styled,
     Typography
 } from "@mui/material";
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import PropTypes from "prop-types";
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import {useEffect, useState} from "react";
+import {getURLFile, uploadFile} from "../firebase/firebase.jsx";
 
 const PersonalizedCard = ({dataObject}) => {
 
+    const VisuallyHiddenInput = styled('input')({
+        clip: 'rect(0 0 0 0)',
+        clipPath: 'inset(50%)',
+        height: 1,
+        overflow: 'hidden',
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        whiteSpace: 'nowrap',
+        width: 1,
+    });
+
     const name = dataObject.attributes.name
     const id = dataObject.id
+    const [file, setFile] = useState(null);
+    const [image, setImage] = useState("");
 
     const setImg = (img, type) => {
         if (img !== null && img !== undefined) {
             return img
-        } else if(type==="character"){
+        } else if (type === "character") {
             return "/images/cards/character.png"
-        } else  if(type==="movie"){
-            console.log("entra")
+        } else if (type === "movie") {
             return "/images/cards/movie.png"
-        }else  if(type==="potion"){
+        } else if (type === "potion") {
             return "/images/cards/potion.png"
+        }
+    }
+
+    useEffect(() => {
+        if(file!=null) {
+            uploadFile(file).then( async () =>{
+                let url = await getURLFile(file.name)
+                setImage(url)
+            })
+        }
+    }, [file]);
+
+    useEffect(() => {
+        setImage(setImg(dataObject.attributes.image, dataObject.type))
+    }, []);
+
+    const changePicture = (e) => {
+        if(e.target.files){
+            setFile(e.target.files[0])
         }
     }
 
@@ -35,10 +70,11 @@ const PersonalizedCard = ({dataObject}) => {
         <div className={"m-2"}>
             <Card sx={{maxWidth: 345}}>
                 <CardHeader
-                    action={
-                        <IconButton aria-label="settings">
-                            <MoreVertIcon/>
-                        </IconButton>
+                    action={dataObject.type === "character" &&
+                        <Button component="label"  style={{margin: 0, padding: 0}}>
+                            <CloudUploadIcon style={{margin: 0, padding: 0}}/>
+                            <VisuallyHiddenInput type="file" onChange={changePicture}/>
+                        </Button>
                     }
                     title={name}
                     subheader={id}
@@ -46,9 +82,8 @@ const PersonalizedCard = ({dataObject}) => {
                 <CardMedia
                     component="img"
                     height="194"
-                    image={setImg(dataObject.attributes.image, dataObject.type)}
+                    image={image}
                 />
-
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
                         <b>type: </b>{dataObject.type}<br/>

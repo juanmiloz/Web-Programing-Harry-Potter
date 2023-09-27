@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage"
 
 
 const firebaseConfig = {
@@ -15,6 +16,8 @@ const firebaseConfig = {
 const app =  initializeApp(firebaseConfig)
 const auth = getAuth(app)
 
+const storage = getStorage(app)
+
 export const login = (email, password) =>{
     return new Promise((resolve, reject) => {
         signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
@@ -26,5 +29,17 @@ export const login = (email, password) =>{
             reject(false)
         });
     })
-
 }
+
+export const uploadFile = (file) => {
+    const storageRef = ref(storage, file.name)
+    return uploadBytes(storageRef, file)
+}
+
+export const getURLFile = (fileName) => {
+    return getDownloadURL(ref(storage, fileName)).then((url)=>{
+        console.log(url)
+        return url
+    })
+}
+
