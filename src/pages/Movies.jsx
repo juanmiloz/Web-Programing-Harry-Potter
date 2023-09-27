@@ -10,6 +10,7 @@ const Movies = () => {
             "attributes": {
                 "slug": "fantastic-beasts-and-where-to-find-them",
                 "title": "Fantastic Beasts and Where to Find Them",
+                "name": "Fantastic Beasts and Where to Find Them",
                 "summary": "Fantastic Beasts and Where to Find Them tells the tale of magizoologist Newton (Newt) Scamander and his adventure through New York City in the 1920s. A thrilling chase ensues when the magical creatures inside Newt’s suitcase are freed inside the city. Along with his new friends Jacob, a muggle, and Queenie, Newt must recapture all the creatures before they lay destruction to the city. However, things get complicated as a lurking Obscurial reveals itself and the Magical Congress of United States (MACUSA) intervenes.",
                 "directors": [
                     "David Yates"
@@ -52,6 +53,7 @@ const Movies = () => {
             "attributes": {
                 "slug": "fantastic-beasts-the-crimes-of-grindelwald",
                 "title": "Fantastic Beasts: The Crimes of Grindelwald",
+                "name": "Fantastic Beasts: The Crimes of Grindelwald",
                 "summary": "Fantastic Beasts: The Crimes of Grindelwald continues the story of Newt Scamander as he chases Credence Barebone on orders by Dumbledore, who suspects him to be Corvus Lestrange V. A twisted tale of vengeance and treachery unveils itself as the story advances and the true identity of Credence becomes even more obscure. Grindelwald’s plan to cause a war between muggles and wizards is set into motion, and Credence joins him.",
                 "directors": [
                     "David Yates"
@@ -94,6 +96,7 @@ const Movies = () => {
             "attributes": {
                 "slug": "fantastic-beasts-the-secrets-of-dumbledore",
                 "title": "Fantastic Beasts: The Secrets of Dumbledore",
+                "name": "Fantastic Beasts: The Secrets of Dumbledore",
                 "summary": "The third movie in the Fantastic Beast Series sees Grindelwald trying to destroy the muggle world as Newt and his allies including Dumbledore try to stop him. Grindelwald kills a Qilin, a magical beast, to become the Supreme Leader of the ICW. Credence rethinks his decision to join Grindelwald upon realizing that he is the illegitimate son of Aberforth Dumbledore. The epic showdown takes place in Bhutan, where Dumbledore and Grindelwald fight it out after the blood pact that prevented them from dueling breaks. Grindelwald disapparates from the place and his plans are put to end.",
                 "directors": [
                     "David Yates"
@@ -136,6 +139,8 @@ const Movies = () => {
             "attributes": {
                 "slug": "harry-potter-and-the-philosopher-s-stone",
                 "title": "Harry Potter and the Philosopher's Stone",
+                
+                "name": "Harry Potter and the Philosopher's Stone",
                 "summary": "Harry Potter’s dull life is completely changed on his eleventh birthday when a mysterious letter addressed to him arrives in the mail. After finding out about his real parents and a whole hidden wizarding world, he goes on to Hogwarts, his new magical school. From battling a troll to flying on broomsticks to catch golden snitches, Harry’s new life promises to be full of joy and adventure, until he finds out about a certain Dark Lord who murdered his parents is trying to regain power. With his friends Hermione and Ron, Harry sets out to find the philosopher’s stone before Voldemort to prevent his return. After advancing through a particularly difficult set of traps designed by the school, Harry faces the Dark Lord and manages to keep the Philosopher’s Stone safe.",
                 "directors": [
                     "Chris Columbus"
@@ -178,6 +183,7 @@ const Movies = () => {
             "attributes": {
                 "slug": "harry-potter-and-the-chamber-of-secrets",
                 "title": "Harry Potter and the Chamber of Secrets",
+                "name": "Harry Potter and the Chamber of Secrets",
                 "summary": "Harry’s second year at Hogwarts begins with a series of mishaps when he and Ron miss the train to Hogwarts. Furthermore, a mysterious Chamber of Secrets has been opened inside Hogwarts and students are getting petrified one after the another. Harry, Ron and Hermione start to uncover the dark tale behind the chamber using a diary Harry found, which leads them into the lair of an Acromantula. Ginny gets kidnapped and it is up to Harry to save her and the school from the monster of the Chamber of Secrets.",
                 "directors": [
                     "Chris Columbus"
@@ -221,6 +227,7 @@ const Movies = () => {
             "attributes": {
                 "slug": "harry-potter-and-the-prisoner-of-azkaban",
                 "title": "Harry Potter and the Prisoner of Azkaban",
+                "name": "Harry Potter and the Prisoner of Azkaban",
                 "summary": " After unintentionally using magic against Aunt Marge, Harry arrives at the Leaky Cauldron and learns that a killer named Sirius Black is after him. Hogwarts is under a dark and grim spell with Dementors, the ghostly guardians of Azkaban, looking for Black. Harry and his friends spend their third year learning how to handle a half-horse half-eagle Hippogriff, repel shape-shifting Boggarts and master the art of Divination. Harry also inherits a strange map and finds out the truth about Sirius Black being his godfather. Battling against dementors and werewolves, an incredible story unfolds as Harry masters advanced magic, crosses the barriers of time and changes the course of more than one life.",
                 "directors": [
                     "Alfonso Cuarón"
@@ -263,6 +270,8 @@ const Movies = () => {
             "attributes": {
                 "slug": "harry-potter-and-the-goblet-of-fire",
                 "title": "Harry Potter and the Goblet of Fire",
+                
+                "name": "Harry Potter and the Goblet of Fire",
                 "summary": "In his fourth year at Hogwarts, Harry is mysteriously selected as a champion for the Triwizard Tournament. Three dangerous tasks await the champions from different schools, each tougher than the next. With the help of his new Defence Against the Dark Arts teacher, Professor Moody, Harry manages to advance through dragons, water demons and enchanted mazes to find himself in the clutches of Lord Voldemort. With the return of the Dark Lord and the Ministry denying Harry’s claims, will things ever return to how they were?",
                 "directors": [
                     "Mike Newell"
@@ -302,6 +311,7 @@ const Movies = () => {
             "attributes": {
                 "slug": "harry-potter-and-the-order-of-the-phoenix",
                 "title": "Harry Potter and the Order of the Phoenix",
+                "name": "Harry Potter and the Order of the Phoenix",
                 "summary": "Harry’s fifth year at Hogwarts is no short of trouble when a new Defence Against the Dark Arts teacher, Dolores Umbridge, is appointed by the ministry of magic. Umbridge refuses to teach any actual defensive spells, causing Harry to form a secret group of students called “Dumbledore’s Army” to learn and teach defensive spells. The connection between Harry and Voldemort’s mind grows stronger, and a concerned Dumbledore asks Snape to teach Occlumency to Harry. Harry experiences a surge of romantic feelings for someone. Things only get worse as Dumbledore’s Army is discovered and Umbridge is appointed as the new Headmistress. As Voldemort grows in power and the danger grows ever more, Harry might lose someone very close to him.",
                 "directors": [
                     "David Yates"
@@ -342,6 +352,7 @@ const Movies = () => {
             "attributes": {
                 "slug": "harry-potter-and-the-half-blood-prince",
                 "title": "Harry Potter and the Half-Blood Prince",
+                "name": "Harry Potter and the Half-Blood Prince",
                 "summary": "The sixth installment in the Harry Potter series begins with Harry accompanying Dumbledore to persuade Horace Slughorn to return to teaching at Hogwarts. Harry suspects Malfoy is now a Death Eater and is determined to find out the truth. Harry eventually becomes Slughorn’s favorite student upon finding a book belonging to the “Half-Blood Prince”. Using this connection, Dumbledore successfully obtains a memory from Slughorn linking to a young Voldemort and his inquiries about Horcruxes. Harry and Dumbledore venture out to find and destroy a Horcrux unaware of the grave fate that awaits them.",
                 "directors": [
                     "David Yates"
@@ -382,6 +393,7 @@ const Movies = () => {
             "attributes": {
                 "slug": "harry-potter-and-the-deathly-hallows-part-1",
                 "title": "Harry Potter and the Deathly Hallows – Part 1",
+                "name": "Harry Potter and the Deathly Hallows – Part 1",
                 "summary": "After Dumbledore’s death, it is up to Harry, Ron, and Hermione to seek out the remaining Horcruxes and destroy them if they hope to defeat Voldemort. Each of them is passed on something from Dumbledore as clues to finding the Horcruxes. On their own, without the guidance of their professors or the protection of Professor Dumbledore, the three friends must now rely on one another more than ever. After managing to recover and destroy Slytherin’s locket, one of the Horcruxes, Hermione discovers about the Deathly Hallows from the book Dumbledore passed on to her. Will Harry be able to stop Voldemort if he recovers all the deathly hallows and becomes the Master of Death?",
                 "directors": [
                     "David Yates"
@@ -423,6 +435,7 @@ const Movies = () => {
             "attributes": {
                 "slug": "harry-potter-and-the-deathly-hallows-part-2",
                 "title": "Harry Potter and the Deathly Hallows – Part 2",
+                "name": "Harry Potter and the Deathly Hallows – Part 2",
                 "summary": "In the epic conclusion to the Harry Potter series, Harry, Ron and Hermione rush to find the remaining Horcruxes and destroy them. Their search leads them to robbing the Gringotts bank and finally back to their home, Hogwarts. Voldemort kills Snape to win over the allegiance of the Elder Wand, who gives Harry a memory before dying. Going through the memory, Harry comes to realize the bitter truth that he must sacrifice himself to bring down Voldemort. As the final battle rages on at Hogwarts, death and destruction follow, and many of the loved characters draw their last breath. This final movie, takes all the previous installments and builds upon it, painting a beautiful end to the much loved tale of Harry Potter.",
                 "directors": [
                     "David Yates"
