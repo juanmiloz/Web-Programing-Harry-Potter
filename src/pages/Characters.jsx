@@ -3604,7 +3604,7 @@ const Characters = () => {
 
     const renderCharacter = () =>{
         return characters.map((character, index) =>
-            <Grid item xs={2} sm={4} md={4} key={index}>
+            <Grid item xs={2} sm={4} md={4} key={index} >
                 <PersonalizedCard key={character.id} dataObject={character}></PersonalizedCard>
             </Grid>
         )

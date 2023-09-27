@@ -33,7 +33,7 @@ const Login = () => {
 
 
     return (
-        <div className={"flex justify-center items-center w-screen h-screen bg-[url('images/backgroundLogin.jpg')]"}>
+        <div className={"flex justify-center items-center w-screen h-screen bg-center bg-cover"} style={{ backgroundImage: `url('images/LoginImage.jpg')` }}>
             <div className={'flex flex-col bg-[#F2DE79] rounded-lg p-5'}>
                 <div className="flex justify-center font-bold text-[#0D0C0C]">
                     Login
@@ -43,7 +43,7 @@ const Login = () => {
                         required
                         id="emailTextField"
                         label="Email"
-                        onChange={changeEmail}
+                        onChange={changeEmail} 
                     />
                 </div>
                 <div className={'mt-5'}>
