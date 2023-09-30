@@ -1,9 +1,12 @@
 import {AppBar, Box, Button, IconButton, Toolbar, Typography} from "@mui/material";
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {loginDispatch, logout} from "../redux/reducers/authSlice.js";
 
 const AppBarComponent = () => {
 
     const elements = ["characters","movies","potions"]
+    const dispatch = useDispatch()
 
     const renderOptions = () => {
         return elements.map((option, index) =>
@@ -37,6 +40,7 @@ const AppBarComponent = () => {
                     {
                         renderOptions()
                     }
+                    <Button variant={"outlined"} style={{ color:"#FFFFFF",  border: "1px solid white", marginLeft: "10px"}} onClick={dispatch(logout())}>logout</Button>
                 </Box>
             </Toolbar>
         </AppBar>

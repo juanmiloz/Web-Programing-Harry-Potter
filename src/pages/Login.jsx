@@ -1,14 +1,16 @@
 import {Button, TextField} from "@mui/material";
-
+import {useDispatch} from "react-redux";
 import {useState} from "react";
 import {login} from "../firebase/firebase.jsx";
 import {useNavigate} from "react-router-dom";
+import {loginDispatch} from "../redux/reducers/authSlice.js"
 
 const Login = () => {
 
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const dispatch = useDispatch()
 
     const changeEmail = (e) => {
         if(e.target.id === "emailTextField"){
@@ -22,7 +24,7 @@ const Login = () => {
         login(email, password).then((res)=>{
             //TODO Implementar la logica del logueado
             if(res){
-                console.log("logueado")
+                dispatch(loginDispatch({email: res.email, token: res.accessToken}))
                 navigate("/home/characters")
             }else{
                 console.log("malo")

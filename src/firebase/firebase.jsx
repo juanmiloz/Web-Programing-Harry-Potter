@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage"
+import uuid from 'react-uuid'
 
 
 const firebaseConfig = {
@@ -22,8 +23,7 @@ export const login = (email, password) =>{
     return new Promise((resolve, reject) => {
         signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
             const user = userCredential.user;
-            console.log(user)
-            resolve(true)
+            resolve(user)
         }).catch((error) => {
             console.log(error)
             reject(false)
@@ -32,7 +32,7 @@ export const login = (email, password) =>{
 }
 
 export const uploadFile = (file) => {
-    const storageRef = ref(storage, file.name)
+    const storageRef = ref(storage, uuid())
     return uploadBytes(storageRef, file)
 }
 

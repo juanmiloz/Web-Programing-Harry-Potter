@@ -49,8 +49,8 @@ const PersonalizedCard = ({dataObject}) => {
 
     useEffect(() => {
         if(file!=null) {
-            uploadFile(file).then( async () =>{
-                let url = await getURLFile(file.name)
+            uploadFile(file).then( async (res) =>{
+                let url = await getURLFile(res.metadata.name)
                 setImage(url)
             })
         }
