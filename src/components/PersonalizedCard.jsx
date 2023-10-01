@@ -10,6 +10,7 @@ import {
     styled,
     Typography
 } from "@mui/material";
+import AspectRatio from '@mui/joy/AspectRatio';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import PropTypes from "prop-types";
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
@@ -68,22 +69,29 @@ const PersonalizedCard = ({dataObject}) => {
 
     return (
         <div className={"m-2"}>
-            <Card sx={{maxWidth: 345}}>
-                <CardHeader
-                    action={dataObject.type === "character" &&
-                        <Button component="label"  style={{margin: 0, padding: 0}}>
-                            <CloudUploadIcon style={{margin: 0, padding: 0}}/>
-                            <VisuallyHiddenInput type="file" onChange={changePicture}/>
-                        </Button>
-                    }
-                    title={name}
-                    subheader={id}
-                />
-                <CardMedia
-                    component="img"
-                    height="194"
-                    image={image}
-                />
+            <Card raised sx={{maxWidth: 345, margin: "0 auto",
+    padding: "0.1em",
+}}>
+                <AspectRatio variant="plain" sx={{ padding: "1em"}}>
+                    <CardHeader
+                        action={dataObject.type === "character" &&
+                            <Button component="label"  style={{margin: 0, padding: 0}}>
+                                <CloudUploadIcon style={{margin: 0, padding: 0}}/>
+                                <VisuallyHiddenInput type="file" onChange={changePicture}/>
+                            </Button>
+                        }
+                        title={name}
+                        subheader={id}
+                    />
+                </AspectRatio>
+                <AspectRatio
+                ratio="4/3">
+                    <CardMedia
+                        component="img"
+                        height="194"
+                        image={image}
+                    />
+                </AspectRatio>
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
                         <b>type: </b>{dataObject.type}<br/>
