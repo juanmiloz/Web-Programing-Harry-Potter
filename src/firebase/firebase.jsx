@@ -24,9 +24,8 @@ export const login = (email, password) =>{
         signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
             const user = userCredential.user;
             resolve(user)
-        }).catch((error) => {
-            console.log(error)
-            reject(false)
+        }).catch((error)=> {
+            reject(error)
         });
     })
 }
