@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import { getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage"
 import uuid from 'react-uuid'
 
@@ -18,6 +18,20 @@ const app =  initializeApp(firebaseConfig)
 const auth = getAuth(app)
 
 const storage = getStorage(app)
+
+export const signUp = (email, password) => {
+    return new Promise((resolve, reject) => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                resolve(user)
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                reject(errorMessage)
+            });
+    })
+}
 
 export const login = (email, password) =>{
     return new Promise((resolve, reject) => {
