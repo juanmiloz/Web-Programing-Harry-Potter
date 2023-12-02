@@ -44,15 +44,18 @@ export const login = (email, password) =>{
     })
 }
 
-export const uploadFile = (file) => {
+export const uploadFile =async (file) => {
     const storageRef = ref(storage, uuid())
-    return uploadBytes(storageRef, file)
+    return await uploadBytes(storageRef, file)
 }
 
 export const getURLFile = (fileName) => {
+    console.log('entra')
     return getDownloadURL(ref(storage, fileName)).then((url)=>{
         console.log(url)
         return url
+    }).catch((e)=>{
+        console.log(e)
     })
 }
 
